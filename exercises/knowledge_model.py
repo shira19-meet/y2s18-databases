@@ -9,11 +9,13 @@ class Knowledge(Base):
     __tablename__ = 'knowledge'
     id = Column(Integer, primary_key=True)
     tv_show = Column(String)
-    Stranger_Things = Column(String)
+    season = Column(Integer)
     rate = Column(Integer)
+
     def __repr__(self):
-        return ("If you want to watch a tv show' you should look up Stranger Things on Netflix. We gave this show a rating of 10 out of 10: {}").format
-        (self,id,tv_show, Stranger_Things,rate)
+        return "If you want to watch a tv show you should look up {} " \
+                "that has {} seasons We gave this show a rating of {}" \
+                " out of 10".format(self.tv_show,self,season,self.rate)
 
     #def __init__(self,id, netflix ,tv_show, episode)
     # Create a table with 4 columns
@@ -23,8 +25,5 @@ class Knowledge(Base):
     # The third column will be a string representing the 
     # topic of the article. The last column will be
     # an integer, representing your rating of the article.
-
-        #self.id = id
-        #self.netflix = netflix
-        #self.tv_show = tv_show
-        #self.episode = episode
+k=Knowledge(tv_show="a", season=1 , rate=1)
+print(k)
